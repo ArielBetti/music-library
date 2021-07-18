@@ -2,12 +2,13 @@ import {
   GET_USER,
   LOAD_USER_ERROR,
   LOAD_USER_SUCCESS,
-} from "../contants/teste";
+} from "../contants/test";
 
 const INITIAL_STATE = {
   loading: false,
   error: false,
   user: {},
+  errorMessage: '',
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -30,6 +31,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         ...INITIAL_STATE,
         loading: false,
         error: true,
+        errorMessage: action.error,
       };
 
     default:
